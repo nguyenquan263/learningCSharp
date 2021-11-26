@@ -1,0 +1,14 @@
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\ThuLe-Project.exe
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\ThuLe-Project.deps.json
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\ThuLe-Project.runtimeconfig.json
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\ThuLe-Project.runtimeconfig.dev.json
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\ThuLe-Project.dll
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\ThuLe-Project.pdb
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\ThuLe-Project.csproj.AssemblyReference.cache
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\ThuLe-Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\ThuLe-Project.AssemblyInfoInputs.cache
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\ThuLe-Project.AssemblyInfo.cs
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\ThuLe-Project.csproj.CoreCompileInputs.cache
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\ThuLe-Project.dll
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\ThuLe-Project.pdb
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\ThuLe-Project.genruntimeconfig.cache

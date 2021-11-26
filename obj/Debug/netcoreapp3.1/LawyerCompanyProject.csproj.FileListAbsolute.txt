@@ -1,0 +1,14 @@
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\LawyerCompanyProject.exe
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\LawyerCompanyProject.deps.json
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\LawyerCompanyProject.runtimeconfig.json
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\LawyerCompanyProject.runtimeconfig.dev.json
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\LawyerCompanyProject.dll
+C:\Users\nguye\source\repos\ThuLe-Project\bin\Debug\netcoreapp3.1\LawyerCompanyProject.pdb
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.csproj.AssemblyReference.cache
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.AssemblyInfoInputs.cache
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.AssemblyInfo.cs
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.csproj.CoreCompileInputs.cache
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.dll
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.pdb
+C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.genruntimeconfig.cache
