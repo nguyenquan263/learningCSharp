@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LawyerCompanyProject.controllers;
 using LawyerCompanyProject.models;
 using LawyerCompanyProject.models.interfaces;
 using LawyerCompanyProject.statics;
@@ -10,16 +11,11 @@ namespace LawyerCompanyProject
     {
         public static void Main(string[] args)
         {
-            Client client = new Client(1, "Quan", "Ngoc Minh", "Nguyen", DateTime.Now, "Criminal", "Hermitage Dr", "219", "35630", "Florence");
+            IEmployee emp = new Receptionist(1, "Quan", DateTime.Now, "Test", "qnguyen3", "123abc");
 
-            Console.WriteLine(client.ToString());
+            Data.employees.Add(emp);
 
-            client.setFirstName("Tram Anh");
-            Console.WriteLine(client.ToString());
-
-            Console.WriteLine(++currentAppointments.appointmentNumber);
-
-          
+            Processor.logIn();
 
             
         }

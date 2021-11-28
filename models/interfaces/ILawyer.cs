@@ -6,7 +6,13 @@ namespace LawyerCompanyProject.models.interfaces
 {
     interface ILawyer : IEmployee
     {
-        public abstract bool isSenior();
-        public abstract void setSenior();
+        public bool isSenior();
+        public void setSenior(bool isSeniorPos);
+        public void setDOB(DateTime dob);
+        public DateTime getDOB();
+        public void setYearOfExperience(int yearOfExperience);
+        public int getYearOfExperience();
+        public void setSpecialization(string specialization);
+        public string getSpecialization();
     }
 }

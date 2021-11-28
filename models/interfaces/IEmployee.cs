@@ -6,28 +6,26 @@ namespace LawyerCompanyProject.models.interfaces
 {
     interface IEmployee
     {
+        public string getPosition();
+        public void setEmployeeId(int employeeId);
+        public int getEmployeeId();
 
-        public abstract void setEmployeeId(int employeeId);
-        public abstract int getEmployeeId();
+        public void setName(string name);
+        public string getName();
 
-        public abstract void setName(string name);
-        public abstract string getName();
+        public void setJoinedDate(DateTime joinedDate);
+        public DateTime getJoinedDate();
 
-        public abstract void setDOB(DateTime dob);
-        public abstract DateTime getDOB();
+        public void setOtherExpertise(string otherExpertise);
+        public string getOtherExpertise();
 
-        public abstract void setYearOfExperience(DateTime dob);
-        public abstract DateTime getYearOfExperience();
+        public string getUsername();
+        public void setUsername(string userName);
+        public string getPassword();
+        public void setPassword(string password);
 
-        public abstract void setSpecialization(string specialization);
-        public abstract string getSpecialization();
 
-        public abstract void setJoinedDate(DateTime joinedDate);
-        public abstract DateTime getJoinedDate();
 
-        public abstract void setOtherExpertise(string otherExpertise);
-        public abstract string getOtherExpertise();
-
-        public abstract override string ToString();
+      
     }
 }

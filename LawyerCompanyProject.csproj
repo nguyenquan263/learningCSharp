@@ -6,8 +6,4 @@
     <RootNamespace>LawyerCompanyProject</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="models\interfaces\" />
-  </ItemGroup>
-
 </Project>

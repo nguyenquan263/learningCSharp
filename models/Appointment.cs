@@ -13,7 +13,8 @@ namespace LawyerCompanyProject.models
         private string meetingRoom;
         private string shortDescription;
 
-        public Appointment(int id, int clientId, int lawyerId, DateTime dateTime, string meetingRoom, string shortDescription) {
+        public Appointment(int id, int clientId, int lawyerId, DateTime dateTime, string meetingRoom, string shortDescription)
+        {
             this.id = id;
             this.clientId = clientId;
             this.lawyerId = lawyerId;
@@ -22,51 +23,63 @@ namespace LawyerCompanyProject.models
             this.shortDescription = shortDescription;
         }
 
-        public void setId(int id) {
+        public void setId(int id)
+        {
             this.id = id;
         }
 
-        public int getId() {
+        public int getId()
+        {
             return this.id;
         }
 
-        public void setClientId(int clientId) {
+        public void setClientId(int clientId)
+        {
             this.clientId = clientId;
         }
 
-        public int getClientId() {
+        public int getClientId()
+        {
             return this.clientId;
         }
 
-        public void setLawyerId(int lawyerId) {
+        public void setLawyerId(int lawyerId)
+        {
             this.lawyerId = lawyerId;
         }
 
-        public int getLawyerId() {
+        public int getLawyerId()
+        {
             return this.lawyerId;
         }
 
-        public void setDateTime(DateTime dateTime) {
+        public void setDateTime(DateTime dateTime)
+        {
             this.dateTime = dateTime;
         }
 
-        public DateTime getDateTime() {
+        public DateTime getDateTime()
+        {
             return this.dateTime;
         }
 
-        public void setMeetingRoom(string meetingRoom) {
+        public void setMeetingRoom(string meetingRoom)
+        {
             this.meetingRoom = meetingRoom;
         }
 
-        public string getMeetingRoom() {
+        public string getMeetingRoom()
+        {
             return this.meetingRoom;
         }
 
-        public void setShortDescription(string shortDescription) {
+        public void setShortDescription(string shortDescription)
+        {
             this.shortDescription = shortDescription;
         }
 
-        public string getShortDescription() {
+        public string getShortDescription()
+        {
             return this.shortDescription;
         }
 
