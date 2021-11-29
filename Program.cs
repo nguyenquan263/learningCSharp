@@ -13,10 +13,12 @@ namespace LawyerCompanyProject
             Processor.setUpEmployees();
 
             Processor.logIn();
-
-
             Processor.addNewClient();
-            Processor.getClientList();
+
+
+            Processor.addNewAppointment();
+
+
         }
     }
 }

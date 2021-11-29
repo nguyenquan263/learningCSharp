@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nguye\\source\\repos\\ThuLe-Project\\LawyerCompanyProject.csproj",
+      "projectUniqueName": "D:\\personalStuffs\\learningCSharp\\LawyerCompanyProject.csproj",
       "projectName": "LawyerCompanyProject",
-      "projectPath": "C:\\Users\\nguye\\source\\repos\\ThuLe-Project\\LawyerCompanyProject.csproj",
+      "projectPath": "D:\\personalStuffs\\learningCSharp\\LawyerCompanyProject.csproj",
       "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nguye\\source\\repos\\ThuLe-Project\\obj\\",
+      "outputPath": "D:\\personalStuffs\\learningCSharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
