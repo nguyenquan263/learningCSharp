@@ -12,3 +12,17 @@ C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyP
 C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.dll
 C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.pdb
 C:\Users\nguye\source\repos\ThuLe-Project\obj\Debug\netcoreapp3.1\LawyerCompanyProject.genruntimeconfig.cache
+D:\personalStuffs\learningCSharp\bin\Debug\netcoreapp3.1\LawyerCompanyProject.exe
+D:\personalStuffs\learningCSharp\bin\Debug\netcoreapp3.1\LawyerCompanyProject.deps.json
+D:\personalStuffs\learningCSharp\bin\Debug\netcoreapp3.1\LawyerCompanyProject.runtimeconfig.json
+D:\personalStuffs\learningCSharp\bin\Debug\netcoreapp3.1\LawyerCompanyProject.runtimeconfig.dev.json
+D:\personalStuffs\learningCSharp\bin\Debug\netcoreapp3.1\LawyerCompanyProject.dll
+D:\personalStuffs\learningCSharp\bin\Debug\netcoreapp3.1\LawyerCompanyProject.pdb
+D:\personalStuffs\learningCSharp\obj\Debug\netcoreapp3.1\LawyerCompanyProject.csproj.AssemblyReference.cache
+D:\personalStuffs\learningCSharp\obj\Debug\netcoreapp3.1\LawyerCompanyProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\personalStuffs\learningCSharp\obj\Debug\netcoreapp3.1\LawyerCompanyProject.AssemblyInfoInputs.cache
+D:\personalStuffs\learningCSharp\obj\Debug\netcoreapp3.1\LawyerCompanyProject.AssemblyInfo.cs
+D:\personalStuffs\learningCSharp\obj\Debug\netcoreapp3.1\LawyerCompanyProject.csproj.CoreCompileInputs.cache
+D:\personalStuffs\learningCSharp\obj\Debug\netcoreapp3.1\LawyerCompanyProject.dll
+D:\personalStuffs\learningCSharp\obj\Debug\netcoreapp3.1\LawyerCompanyProject.pdb
+D:\personalStuffs\learningCSharp\obj\Debug\netcoreapp3.1\LawyerCompanyProject.genruntimeconfig.cache

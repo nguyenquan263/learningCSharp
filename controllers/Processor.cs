@@ -9,6 +9,7 @@ namespace LawyerCompanyProject.controllers
 {
     class Processor
     {
+        public static bool isStop = false;
         public static bool logIn()
         {
             int trialTime = 3;
@@ -313,6 +314,113 @@ namespace LawyerCompanyProject.controllers
             Console.WriteLine("-----------------------------\n");
         }
 
+        public static void logOut() {
+            Data.currentUser = null;
+            isStop = true;
+        }
+
+        public static void showOptions(string position) {
+
+            int choice = -1;
+
+            if (position == "Receptionist")
+            {
+                Console.WriteLine("\n** You are a receptionist, here are your options: \n");
+                Console.WriteLine("1 - Register a new client.");
+                Console.WriteLine("2 - Add a new appointment.");
+                Console.WriteLine("3 - List all appointments.");
+                Console.WriteLine("4 - List all clients.");
+                Console.WriteLine("5 - Log out.");
+
+                Console.Write("Enter your answer (1-5): ");
+                choice = Int32.Parse(Console.ReadLine());
+
+                if (choice == 1)
+                {
+                    addNewClient();
+                }
+                else if (choice == 2)
+                {
+                    addNewAppointment();
+                }
+                else if (choice == 3)
+                {
+                    getAppointmentList();
+                }
+                else if (choice == 4)
+                {
+                    getClientList();
+                }
+                else {
+                    logOut();
+                }
+
+                   
+            }
+            else if (position == "Lawyer")
+            {
+                Console.WriteLine("\n** You are a lawyer, here are your options: \n");
+                Console.WriteLine("1 - List all cases.");
+                Console.WriteLine("2 - Add a new case.");
+                Console.WriteLine("3 - List all appointments.");
+                Console.WriteLine("4 - Log out.");
+
+                Console.Write("Enter your answer (1-4): ");
+                choice = Int32.Parse(Console.ReadLine());
+
+                if (choice == 1)
+                {
+                    getCaseList();
+                }
+                else if (choice == 2)
+                {
+                    addNewCase();
+                }
+                else if (choice == 3)
+                {
+                    getAppointmentList();
+                }
+                else
+                {
+                    logOut();
+                }
+            }
+            else 
+            {
+                Console.WriteLine("\n** You are an admin, here are your options: \n");
+                Console.WriteLine("1 - List all cases.");
+                Console.WriteLine("2 - List all appointments.");
+                Console.WriteLine("3 - Log out.");
+
+                Console.Write("Enter your answer (1-3): ");
+                choice = Int32.Parse(Console.ReadLine());
+
+                if (choice == 1)
+                {
+                    getCaseList();
+                }
+                else if (choice == 2)
+                {
+                    getAppointmentList();
+                }
+                else
+                {
+                    logOut();
+                }
+            }
+
+        
+
+        }
+
+        public static void processing() {
+            setUpEmployees();
+
+            logIn();
+            while (!isStop) {
+                showOptions(Data.currentUser.getPosition());
+            }
+        }
 
 
 

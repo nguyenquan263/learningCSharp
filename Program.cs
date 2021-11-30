@@ -10,13 +10,7 @@ namespace LawyerCompanyProject
     {
         public static void Main(string[] args)
         {
-            Processor.setUpEmployees();
-
-            Processor.logIn();
-            Processor.addNewClient();
-
-
-            Processor.addNewAppointment();
+            Processor.processing();
 
 
         }
