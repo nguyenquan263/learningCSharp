@@ -3,6 +3,7 @@ using LawyerCompanyProject.models.interfaces;
 using LawyerCompanyProject.statics;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace LawyerCompanyProject.controllers
@@ -14,7 +15,9 @@ namespace LawyerCompanyProject.controllers
         {
             int trialTime = 3;
 
-            while (trialTime > 0) {
+            
+            while (trialTime > 0)
+            {
                 Console.Write("Enter your username: ");
                 string userName = Console.ReadLine();
                 Console.Write("Enter your password: ");
@@ -38,10 +41,52 @@ namespace LawyerCompanyProject.controllers
 
             Console.WriteLine("You input incorrect so many time! We need to stop the application!");
             return false;
+            
+
+
+            
         }
 
         public static void setUpEmployees()
         {
+
+
+            //string[] fileContents = File.ReadAllLines(@"employees.csv");
+
+            //Console.WriteLine(fileContents[1]);
+
+            //for (int i = 0; i < fileContents.Length; i++) {
+
+            //    if (i > 0) {
+            //        string[] currentLine = fileContents[i].Split(',');
+
+            //        DateTime dob = Convert.ToDateTime(currentLine[0]);
+            //        int id = Int32.Parse(currentLine[1]);
+            //        DateTime joinedDate = Convert.ToDateTime(currentLine[2]);
+            //        string name = currentLine[3];
+            //        string otherExpertise = currentLine[4];
+            //        string specialization = currentLine[5];
+            //        Console.WriteLine(currentLine[6]);
+            //        int yearOfExperience = Int32.Parse(currentLine[6]);
+
+            //        bool isSenior = false;
+
+            //        if (currentLine[7] == "Yes") {
+            //            isSenior = true;
+            //        }
+
+            //        string username = currentLine[8];
+            //        string password = currentLine[9];
+
+            //        Lawyer newLawyer = new Lawyer(dob, id, joinedDate, name, otherExpertise, specialization, yearOfExperience, isSenior, username, password);
+
+            //        Data.employees.Add(newLawyer);
+            //    }
+
+
+            //}
+
+
             Lawyer sl1 = new Lawyer(new DateTime(1996, 3, 26), 1, new DateTime(2015, 12, 12), "Bruce Wayne", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, true, "bwayne", "123abc");
             Lawyer sl2 = new Lawyer(new DateTime(1996, 3, 26), 2, new DateTime(2015, 12, 12), "Dick Grayson", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, true, "dgrayson", "123abc");
             Lawyer sl3 = new Lawyer(new DateTime(1996, 3, 26), 3, new DateTime(2015, 12, 12), "Harvey Dent", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, true, "hdent", "123abc");
@@ -316,7 +361,19 @@ namespace LawyerCompanyProject.controllers
 
         public static void logOut() {
             Data.currentUser = null;
-            isStop = true;
+
+            Console.Write("Do you want to exit the application? (Y/N)");
+            string answer = Console.ReadLine();
+
+            if (answer.ToLower().Equals("y"))
+            {
+                System.Environment.Exit(0);
+            }
+            else {
+                logIn();
+            }
+
+            
         }
 
         public static void showOptions(string position) {
