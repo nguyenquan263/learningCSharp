@@ -146,7 +146,7 @@ namespace LawyerCompanyProject.models
                 + "Date of birth: " + this.dob + "\n"
                 + "Year of experience: " + this.yearOfExperience + "\n"
                 + "Specialization: " + this.specialization + "\n"
-                + "Other expertise: " + this.otherExpertise
+                + "Other expertise: " + this.otherExpertise + "\n"
                 + "Position: " + this.getPosition();
          }
 

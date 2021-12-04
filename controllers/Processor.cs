@@ -49,95 +49,69 @@ namespace LawyerCompanyProject.controllers
 
         public static void setUpEmployees()
         {
+            //for lawyers
+            string[] fileContents = File.ReadAllLines(@"lawyers.csv");
+            for (int i = 0; i < fileContents.Length; i++)
+            {
+                if (i > 0)
+                {
+                    string[] currentLine = fileContents[i].Split(',');
+                 
 
+                    DateTime dob = Convert.ToDateTime(currentLine[0]);
+                    int id = Int32.Parse(currentLine[1]);
+                    DateTime joinedDate = Convert.ToDateTime(currentLine[2]);
+                    string name = currentLine[3];
+                    string otherExpertise = currentLine[4];
+                    string specialization = currentLine[5];
+                    int yearOfExperience = Int32.Parse(currentLine[6]);
+                    bool isSenior = false;
+                    if (currentLine[7] == "Yes")
+                    {
+                        isSenior = true;
+                    }
+                    string username = currentLine[8];
+                    string password = currentLine[9];
+                    Lawyer newLawyer = new Lawyer(dob, id, joinedDate, name, otherExpertise, specialization, yearOfExperience, isSenior, username, password);
+                    Data.employees.Add(newLawyer);
+                }
+            }
 
-            //string[] fileContents = File.ReadAllLines(@"employees.csv");
+            //for admins
+            fileContents = File.ReadAllLines(@"admins.csv");
+            for (int i = 0; i < fileContents.Length; i++) {
+                if (i > 0) {
+                    string[] currentLine = fileContents[i].Split(',');
+                    int id = Int32.Parse(currentLine[0]);
+                    DateTime joinedDate = Convert.ToDateTime(currentLine[1]);
+                    string name = currentLine[2];
+                    string otherExpertise = currentLine[3];
+                    string role = currentLine[4];
+                    string userName = currentLine[5];
+                    string password = currentLine[6];
 
-            //Console.WriteLine(fileContents[1]);
+                    Administration newAdmin = new Administration(id, name, joinedDate, otherExpertise, role, userName, password);
+                    Data.employees.Add(newAdmin);
+                }
+            }
 
-            //for (int i = 0; i < fileContents.Length; i++) {
+            fileContents = File.ReadAllLines(@"receptionists.csv");
+            for (int i = 0; i < fileContents.Length; i++)
+            {
+                if (i > 0)
+                {
+                    string[] currentLine = fileContents[i].Split(',');
+                    int id = Int32.Parse(currentLine[0]);
+                    DateTime joinedDate = Convert.ToDateTime(currentLine[1]);
+                    string name = currentLine[2];
+                    string otherExpertise = currentLine[3];
+                    string userName = currentLine[4];
+                    string password = currentLine[5];
 
-            //    if (i > 0) {
-            //        string[] currentLine = fileContents[i].Split(',');
-
-            //        DateTime dob = Convert.ToDateTime(currentLine[0]);
-            //        int id = Int32.Parse(currentLine[1]);
-            //        DateTime joinedDate = Convert.ToDateTime(currentLine[2]);
-            //        string name = currentLine[3];
-            //        string otherExpertise = currentLine[4];
-            //        string specialization = currentLine[5];
-            //        Console.WriteLine(currentLine[6]);
-            //        int yearOfExperience = Int32.Parse(currentLine[6]);
-
-            //        bool isSenior = false;
-
-            //        if (currentLine[7] == "Yes") {
-            //            isSenior = true;
-            //        }
-
-            //        string username = currentLine[8];
-            //        string password = currentLine[9];
-
-            //        Lawyer newLawyer = new Lawyer(dob, id, joinedDate, name, otherExpertise, specialization, yearOfExperience, isSenior, username, password);
-
-            //        Data.employees.Add(newLawyer);
-            //    }
-
-
-            //}
-
-
-            Lawyer sl1 = new Lawyer(new DateTime(1996, 3, 26), 1, new DateTime(2015, 12, 12), "Bruce Wayne", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, true, "bwayne", "123abc");
-            Lawyer sl2 = new Lawyer(new DateTime(1996, 3, 26), 2, new DateTime(2015, 12, 12), "Dick Grayson", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, true, "dgrayson", "123abc");
-            Lawyer sl3 = new Lawyer(new DateTime(1996, 3, 26), 3, new DateTime(2015, 12, 12), "Harvey Dent", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, true, "hdent", "123abc");
-            Lawyer sl4 = new Lawyer(new DateTime(1996, 3, 26), 4, new DateTime(2015, 12, 12), "Rachel Dawn", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, true, "rdawn", "123abc");
-            Lawyer sl5 = new Lawyer(new DateTime(1996, 3, 26), 5, new DateTime(2015, 12, 12), "Harvey Bullock", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, true, "hbullock", "123abc");
-
-            Data.employees.Add(sl1);
-            Data.employees.Add(sl2);
-            Data.employees.Add(sl3);
-            Data.employees.Add(sl4);
-            Data.employees.Add(sl5);
-
-            Lawyer jl1 = new Lawyer(new DateTime(1996, 3, 26), 6, new DateTime(2015, 12, 12), "Tim Drake", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "tdrake", "123abc");
-            Lawyer jl2 = new Lawyer(new DateTime(1996, 3, 26), 7, new DateTime(2015, 12, 12), "Jason Todd", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "jtodd", "123abc");
-            Lawyer jl3 = new Lawyer(new DateTime(1996, 3, 26), 8, new DateTime(2015, 12, 12), "Arean Vermont", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "avermont", "123abc");
-            Lawyer jl4 = new Lawyer(new DateTime(1996, 3, 26), 9, new DateTime(2015, 12, 12), "James Gordon", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "jgordon", "123abc");
-            Lawyer jl5 = new Lawyer(new DateTime(1996, 3, 26), 10, new DateTime(2015, 12, 12), "Damian Wayne", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "dwayne", "123abc");
-            Lawyer jl6 = new Lawyer(new DateTime(1996, 3, 26), 11, new DateTime(2015, 12, 12), "Alfred Pennyworth", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "apennyworth", "123abc");
-            Lawyer jl7 = new Lawyer(new DateTime(1996, 3, 26), 12, new DateTime(2015, 12, 12), "Sam Fisher", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "sfisher", "123abc");
-            Lawyer jl8 = new Lawyer(new DateTime(1996, 3, 26), 13, new DateTime(2015, 12, 12), "Amanda White", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "awhite", "123abc");
-            Lawyer jl9 = new Lawyer(new DateTime(1996, 3, 26), 14, new DateTime(2015, 12, 12), "Clark Kent", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "ckent", "123abc");
-            Lawyer jl10 = new Lawyer(new DateTime(1996, 3, 26), 15, new DateTime(2015, 12, 12), "Lois Lane", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "llane", "123abc");
-            Lawyer jl11 = new Lawyer(new DateTime(1996, 3, 26), 16, new DateTime(2015, 12, 12), "Berry White", "fighting, kung-fu, driving", "family criminal, immigrant, etc", 3, false, "bwhite", "123abc");
-
-            Data.employees.Add(jl1);
-            Data.employees.Add(jl2);
-            Data.employees.Add(jl3);
-            Data.employees.Add(jl4);
-            Data.employees.Add(jl5);
-            Data.employees.Add(jl6);
-            Data.employees.Add(jl7);
-            Data.employees.Add(jl8);
-            Data.employees.Add(jl9);
-            Data.employees.Add(jl10);
-            Data.employees.Add(jl11);
-
-            Administration a1 = new Administration(17, "Jack Sparrow", new DateTime(1998, 6, 10), "Joking, Talking, Discussing, etc.", "System Administrator", "jsparrow", "123abc");
-            Administration a2 = new Administration(18, "John Wick", new DateTime(1998, 6, 10), "Joking, Talking, Discussing, etc.", "System Administrator", "jwick", "123abc");
-            Administration a3 = new Administration(19, "Hal Jordan", new DateTime(1998, 6, 10), "Joking, Talking, Discussing, etc.", "System Administrator", "hjordan", "123abc");
-            Administration a4 = new Administration(20, "Barry Allen", new DateTime(1998, 6, 10), "Joking, Talking, Discussing, etc.", "System Administrator", "ballen", "123abc");
-            Administration a5 = new Administration(21, "Diana Prince", new DateTime(1998, 6, 10), "Joking, Talking, Discussing, etc.", "System Administrator", "dprince", "123abc");
-
-            Data.employees.Add(a1);
-            Data.employees.Add(a2);
-            Data.employees.Add(a3);
-            Data.employees.Add(a4);
-            Data.employees.Add(a5);
-
-            Receptionist r1 = new Receptionist(22, "James Bond", new DateTime(2013, 12, 24), "shooting, fighting, talking", "jbond", "123abc");
-
-            Data.employees.Add(r1);
+                    Receptionist newAdmin = new Receptionist(id, name, joinedDate, otherExpertise, userName, password);
+                    Data.employees.Add(newAdmin);
+                }
+            }
 
             Console.WriteLine("Employee database has been set up successfully!");
         }
