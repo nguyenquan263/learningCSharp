@@ -1,0 +1,6 @@
+ID,FirstName,MiddleName,LastName,DOB,CaseType,Street,StreetNumber,Zip,City
+1,Steven,P.,King,10/25/1996,Family,Germitage Dr,219,35630,Florence
+2,Sherlock,T.,Holmes,10/26/1996,Criminal,Plaza Avn,12,2394,New York
+3,John,H.,Watson,10/27/1996,Family,River Dr,144,42142,Chicago
+4,Mary,F.,Norwood,10/28/1996,Corporate,Damian Dr,1241,22214,Los Angeles
+5,Cameron,A.,Martin,10/29/1996,Family,Pine St,124,34211,San Francisco

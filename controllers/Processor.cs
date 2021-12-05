@@ -113,7 +113,36 @@ namespace LawyerCompanyProject.controllers
                 }
             }
 
-            Console.WriteLine("Employee database has been set up successfully!");
+            Console.WriteLine("Employees database has been set up successfully!");
+        }
+
+        public static void setUpClients() {
+            string[] fileContents = File.ReadAllLines(@"clients.csv");
+
+            for (int i = 0; i < fileContents.Length; i++) {
+                if (i > 0)
+                {
+                    string[] currentLine = fileContents[i].Split(',');
+                    int id = Int32.Parse(currentLine[0]);
+                    string firstName = currentLine[1];
+                    string middleName = currentLine[2];
+                    string lastName = currentLine[3];
+                    DateTime dob = Convert.ToDateTime(currentLine[4]);
+                    ESpecialization caseType = ESpecializationHelper.getESpecializationFromString(currentLine[5]);
+                    string street = currentLine[5];
+                    string streetNr = currentLine[6];
+                    string zip = currentLine[7];
+                    string city = currentLine[8];
+
+                    Client newCli = new Client(id, firstName, middleName, lastName, dob, caseType, street, streetNr, zip, city);
+
+                    Data.clients.Add(newCli);
+                }
+            }
+
+            Console.WriteLine("Clients database has been set up successfully!");
+
+
         }
 
         public static void addNewClient() {
@@ -456,6 +485,7 @@ namespace LawyerCompanyProject.controllers
 
         public static void processing() {
             setUpEmployees();
+            setUpClients();
 
             logIn();
             while (!isStop) {
