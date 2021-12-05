@@ -213,7 +213,7 @@ namespace LawyerCompanyProject.controllers
 
                 if (appointmentCount > 0)
                 {
-                    newAppointmentID = Data.clients[Data.clients.Count - 1].getId() + 1;
+                    newAppointmentID = Data.appointments[Data.appointments.Count - 1].getId() + 1;
                 }
                 else
                 {
@@ -234,16 +234,18 @@ namespace LawyerCompanyProject.controllers
                     if (Data.checkLawyerId(lawyerID)) break;
                 }
 
+                Console.Write("Enter your meeting room: ");
+                string meetingRoom = Console.ReadLine();
+
                 string dateTimeString = "a";
                 DateTime dateTime;
                 while (true) {
                     Console.Write("Enter the meeting date & time (MM/DD/YYYY HH:mm): "); 
                     dateTimeString = Console.ReadLine();
-                    if (DateTime.TryParse(dateTimeString, out dateTime) && dateTime > DateTime.Now) break;
+                    if (DateTime.TryParse(dateTimeString, out dateTime) && dateTime >= DateTime.Now && Data.isValidPeriod(dateTime, meetingRoom)) break;
                 }
                 
-                Console.Write("Enter your meeting room: ");
-                string meetingRoom = Console.ReadLine();
+                
 
                 Console.Write("Enter a short description about the appointment: ");
                 string shortDescription = Console.ReadLine();

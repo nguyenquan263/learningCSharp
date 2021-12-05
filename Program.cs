@@ -10,6 +10,8 @@ namespace LawyerCompanyProject
     {
         public static void Main(string[] args)
         {
+         
+            
             Processor.processing();
 
 

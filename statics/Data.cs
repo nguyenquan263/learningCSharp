@@ -29,5 +29,23 @@ namespace LawyerCompanyProject.statics
 
             return false;
         }
+
+        public static bool isValidPeriod(DateTime meetingTime, string meetingRoom) {
+
+            if (appointments.Count == 0) return true;
+
+            for (int i = 0; i < appointments.Count; i++) {
+                DateTime existedMeetingTime = appointments[i].getDateTime();
+                string existedMeetingRoom = appointments[i].getMeetingRoom();
+
+                if (meetingRoom == existedMeetingRoom) {
+                    if (existedMeetingTime.AddHours(1) <= meetingTime || existedMeetingTime > meetingTime) {
+                        return true;
+                    }
+                }
+            }
+            Console.WriteLine("Time conflict! Try again!");
+            return false;
+        }
     }
 }
