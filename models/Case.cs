@@ -8,7 +8,7 @@ namespace LawyerCompanyProject.models
     {
         private int id;
         private int customerId;
-        private string caseType;
+        private ESpecialization caseType;
         private DateTime startDate;
         private string expectedProcessDuration;
         private double totalCharges;
@@ -19,7 +19,7 @@ namespace LawyerCompanyProject.models
         public Case(
             int id,
             int customerId,
-            string caseType,
+            ESpecialization caseType,
             DateTime startDate,
             string expectedProcessDuration,
             double totalCharges,
@@ -30,7 +30,7 @@ namespace LawyerCompanyProject.models
             this.id = id;
             this.customerId = customerId;
 
-            if (!(caseType == "Corporate" || caseType == "Family" || caseType == "Criminal"))
+            if (!(caseType == ESpecialization.Corporate || caseType == ESpecialization.Family || caseType == ESpecialization.Criminal))
             {
                 throw new Exception("Invalid Case Type!");
             }
@@ -63,8 +63,8 @@ namespace LawyerCompanyProject.models
             return this.customerId;
         }
 
-        public void setCaseType(string caseType) {
-            if (!(caseType == "Corporate" || caseType == "Family" || caseType == "Criminal"))
+        public void setCaseType(ESpecialization caseType) {
+            if (!(caseType == ESpecialization.Corporate || caseType == ESpecialization.Family || caseType == ESpecialization.Criminal))
             {
                 throw new Exception("Invalid Case Type!");
             }
@@ -74,7 +74,7 @@ namespace LawyerCompanyProject.models
             }
         }
 
-        public string getCaseType() {
+        public ESpecialization getCaseType() {
             return this.caseType;
         }
 
@@ -129,7 +129,7 @@ namespace LawyerCompanyProject.models
         public override string ToString() {
             return "Id: " + this.id + "\n"
                 + "Customer Id: " + this.customerId + "\n"
-                + "Case type: " + this.caseType + "\n"
+                + "Case type: " + ESpecializationHelper.getESpecializationValue(this.caseType) + "\n"
                 + "Start date: " + this.startDate.ToString() + "\n"
                 + "Expected process duration: " + this.expectedProcessDuration + "\n"
                 + "Total charges: " + this.totalCharges + "\n"

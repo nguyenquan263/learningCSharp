@@ -63,7 +63,7 @@ namespace LawyerCompanyProject.controllers
                     DateTime joinedDate = Convert.ToDateTime(currentLine[2]);
                     string name = currentLine[3];
                     string otherExpertise = currentLine[4];
-                    string specialization = currentLine[5];
+                    ESpecialization specialization = ESpecializationHelper.getESpecializationFromString(currentLine[5]);
                     int yearOfExperience = Int32.Parse(currentLine[6]);
                     bool isSenior = false;
                     if (currentLine[7] == "Yes")
@@ -166,7 +166,7 @@ namespace LawyerCompanyProject.controllers
                 Console.Write("Enter client's city: ");
                 string city = Console.ReadLine();
 
-                Client newClient = new Client(newClientID, firstName, middleName, lastName, dob, caseType, street, streetNr, zip, city);
+                Client newClient = new Client(newClientID, firstName, middleName, lastName, dob, ESpecializationHelper.getESpecializationFromString(caseType), street, streetNr, zip, city);
                 Data.clients.Add(newClient);
                 Console.WriteLine("Add a new client successfully!");
             }
@@ -223,17 +223,25 @@ namespace LawyerCompanyProject.controllers
                 Console.WriteLine("Please choose a client, then input his/her ID below: ");
                 getClientList();
                 Console.Write("Your client ID is: ");
+
                 int clientID = Int32.Parse(Console.ReadLine());
+                int lawyerID = -1; //just for initializing
+                while (true) {
+                    Console.WriteLine("Please choose a valid lawyer, then input his/her ID below: ");
+                    getLawyerList();
+                    Console.Write("Your lawyer ID is: ");
+                    lawyerID = Int32.Parse(Console.ReadLine());
+                    if (Data.checkLawyerId(lawyerID)) break;
+                }
 
-                Console.WriteLine("Please choose a lawyer, then input his/her ID below: ");
-                getLawyerList();
-                Console.Write("Your lawyer ID is: ");
-                int lawyerID = Int32.Parse(Console.ReadLine());
-
-                Console.Write("Enter the meeting date & time (MM/DD/YYYY): ");
-                string dateTimeString = Console.ReadLine();
-                DateTime dateTime = Convert.ToDateTime(dateTimeString);
-
+                string dateTimeString = "a";
+                DateTime dateTime;
+                while (true) {
+                    Console.Write("Enter the meeting date & time (MM/DD/YYYY HH:mm): "); 
+                    dateTimeString = Console.ReadLine();
+                    if (DateTime.TryParse(dateTimeString, out dateTime) && dateTime > DateTime.Now) break;
+                }
+                
                 Console.Write("Enter your meeting room: ");
                 string meetingRoom = Console.ReadLine();
 
@@ -310,7 +318,7 @@ namespace LawyerCompanyProject.controllers
                 Console.Write("Enter the case's other notes: ");
                 string otherNotes = Console.ReadLine();
 
-                Case newCase = new Case(newCaseID, clientID, caseType, startDate, expectedProcessDuration, totalCharge, lawyerID, situationDescription, otherNotes);
+                Case newCase = new Case(newCaseID, clientID, ESpecializationHelper.getESpecializationFromString(caseType), startDate, expectedProcessDuration, totalCharge, lawyerID, situationDescription, otherNotes);
                 Data.cases.Add(newCase);
                 Console.WriteLine("Add a new case successfully!");
             }

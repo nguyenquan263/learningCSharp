@@ -11,7 +11,7 @@ namespace LawyerCompanyProject.models
         private string middleName;
         private string lastName;
         private DateTime dob;
-        private string caseType;
+        private ESpecialization caseType;
         private string street;
         private string streetNr;
         private string zip;
@@ -23,7 +23,7 @@ namespace LawyerCompanyProject.models
             string middleName,
             string lastName,
             DateTime dob,
-            string caseType,
+            ESpecialization caseType,
             string street,
             string streetNr,
             string zip,
@@ -35,7 +35,7 @@ namespace LawyerCompanyProject.models
             this.lastName = lastName;
             this.dob = dob;
 
-            if (!(caseType == "Corporate" || caseType == "Family" || caseType == "Criminal"))
+            if (!(caseType == ESpecialization.Corporate || caseType == ESpecialization.Criminal || caseType == ESpecialization.Family))
             {
                 throw new Exception("Invalid Case Type!");
             }
@@ -90,8 +90,8 @@ namespace LawyerCompanyProject.models
             return this.dob;
         }
 
-        public void setCaseType(string caseType) {
-            if (!(caseType == "Corporate" || caseType == "Family" || caseType == "Criminal"))
+        public void setCaseType(ESpecialization caseType) {
+            if (!(caseType == ESpecialization.Family || caseType == ESpecialization.Corporate || caseType == ESpecialization.Criminal))
             {
                 throw new Exception("Invalid Case Type!");
             }
@@ -101,7 +101,7 @@ namespace LawyerCompanyProject.models
             }
         }
 
-        public string getCaseType() {
+        public ESpecialization getCaseType() {
             return this.caseType;
         }
 
@@ -144,7 +144,7 @@ namespace LawyerCompanyProject.models
                 + "Middle Name: " + this.middleName + "\n"
                 + "Last Name: " + this.lastName + "\n"
                 + "Date of birth: " + this.dob.ToString() + "\n"
-                + "Case type: " + this.caseType + "\n"
+                + "Case type: " + ESpecializationHelper.getESpecializationValue(caseType) + "\n"
                 + "Street: " + this.street + "\n"
                 + "Street number: " + this.streetNr + "\n"
                 + "Zip: " + this.zip + "\n"

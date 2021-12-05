@@ -12,7 +12,7 @@ namespace LawyerCompanyProject.models.interfaces
         public DateTime getDOB();
         public void setYearOfExperience(int yearOfExperience);
         public int getYearOfExperience();
-        public void setSpecialization(string specialization);
-        public string getSpecialization();
+        public void setSpecialization(ESpecialization specialization);
+        public ESpecialization getSpecialization();
     }
 }

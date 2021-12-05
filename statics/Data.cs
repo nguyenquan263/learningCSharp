@@ -13,5 +13,21 @@ namespace LawyerCompanyProject.statics
         public static List<Client> clients = new List<Client>();
         public static List<IEmployee> employees = new List<IEmployee>();
         public static IEmployee currentUser;
+
+
+        //helpers
+        public static bool checkLawyerId(int lawyerId) {
+            for (int i = 0; i < employees.Count; i++) {
+                IEmployee currentEmp = employees[i];
+
+                if (currentEmp.getPosition() == "Lawyer") {
+                    if (currentEmp.getEmployeeId() == lawyerId) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }

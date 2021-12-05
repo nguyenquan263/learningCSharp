@@ -12,13 +12,13 @@ namespace LawyerCompanyProject.models
         private DateTime joinedDate;
         private string name;
         private string otherExpertise;
-        private string specialization;
+        private ESpecialization specialization;
         private int yearOfExperience;
         private bool isSeniorPos;
         private string userName;
         private string password;
 
-        public Lawyer(DateTime dob, int employeeId, DateTime joinedDate, string name, string otherExpertise, string specialization, int yearOfExperience, bool isSeniorPos, string userName, string password)
+        public Lawyer(DateTime dob, int employeeId, DateTime joinedDate, string name, string otherExpertise, ESpecialization specialization, int yearOfExperience, bool isSeniorPos, string userName, string password)
         {
             this.dob = dob;
             this.employeeId = employeeId;
@@ -62,7 +62,7 @@ namespace LawyerCompanyProject.models
             return "Lawyer";
         }
 
-        public string getSpecialization()
+        public ESpecialization getSpecialization()
         {
             return this.specialization;
         }
@@ -106,7 +106,7 @@ namespace LawyerCompanyProject.models
             this.otherExpertise = otherExpertise;
         }
 
-        public void setSpecialization(string specialization)
+        public void setSpecialization(ESpecialization specialization)
         {
             this.specialization = specialization;
         }
@@ -145,7 +145,7 @@ namespace LawyerCompanyProject.models
                 + "Joined On: " + this.joinedDate.ToShortDateString() + "\n"
                 + "Date of birth: " + this.dob + "\n"
                 + "Year of experience: " + this.yearOfExperience + "\n"
-                + "Specialization: " + this.specialization + "\n"
+                + "Specialization: " + ESpecializationHelper.getESpecializationValue(this.specialization) + "\n"
                 + "Other expertise: " + this.otherExpertise + "\n"
                 + "Position: " + this.getPosition();
          }
